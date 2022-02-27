@@ -13,6 +13,7 @@ import tech.sergeyev.hedgehogtechtesttask.persistence.model.Person;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @FieldDefaults(
@@ -48,11 +49,11 @@ public class PersonService {
         return repository.existsPersonByName(name);
     }
 
-    public Boolean existsPersonById(long id) {
+    public Boolean existsPersonById(UUID id) {
         return repository.existsPersonById(id);
     }
 
-    public void deletePersonById(long id) {
+    public void deletePersonById(UUID id) {
         LOGGER.info("Person with id={} has been deleted", id);
         repository.deleteById(id);
     }

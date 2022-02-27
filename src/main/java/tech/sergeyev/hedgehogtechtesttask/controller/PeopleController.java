@@ -13,6 +13,7 @@ import tech.sergeyev.hedgehogtechtesttask.service.PersonService;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/people")
@@ -45,7 +46,7 @@ public class PeopleController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUserById(@PathVariable long id) {
+    public ResponseEntity<?> deleteUserById(@PathVariable UUID id) {
         LOGGER.info("Received a DELETE request to delete user with id: {}", id);
         if (!personService.existsPersonById(id)) {
             LOGGER.info("Person with id={} cannot be deleted because it does not exist in the database", id);
