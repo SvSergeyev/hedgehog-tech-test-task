@@ -11,7 +11,7 @@ import java.net.URL;
 public class PingTask {
     private static final Logger LOGGER = LoggerFactory.getLogger(PingTask.class);
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 1200000)
     public void ping() {
         try {
             URL url = new URL("https://www.google.com");
