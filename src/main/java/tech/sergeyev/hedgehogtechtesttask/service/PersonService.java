@@ -1,10 +1,13 @@
 package tech.sergeyev.hedgehogtechtesttask.service;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import tech.sergeyev.hedgehogtechtesttask.payload.PersonDto;
 import tech.sergeyev.hedgehogtechtesttask.persistence.dao.PersonRepository;
 import tech.sergeyev.hedgehogtechtesttask.persistence.model.Person;
 
@@ -19,14 +22,25 @@ import java.util.List;
 public class PersonService {
     static Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
     PersonRepository repository;
+    ObjectMapper mapper;
 
-    public PersonService(PersonRepository repository) {
+    public PersonService(PersonRepository repository,
+                         ObjectMapper mapper) {
         this.repository = repository;
+        this.mapper = mapper;
     }
 
-    public Person addPerson(Person person) {
-        LOGGER.info("New person added: " + person);
-        return repository.save(person);
+    public Person addPerson(PersonDto personDto) {
+        personDto.setName(personDto.getName().toLowerCase());
+        personDto.setSurname(personDto.getSurname().toLowerCase());
+        try {
+            Person person = mapper.updateValue(new Person(), personDto);
+            LOGGER.info("New person added: " + person);
+            return repository.save(person);
+        } catch (JsonMappingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public Boolean existsPersonByName(String name) {
