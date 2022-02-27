@@ -54,12 +54,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${project.parent.version}</version>
                 <configuration>
-                    <excludes>
+                    <!--<excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
-                    </excludes>
+                    </excludes>-->
                 </configuration>
             </plugin>
         </plugins>
