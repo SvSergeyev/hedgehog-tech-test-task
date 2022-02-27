@@ -5,7 +5,7 @@ import lombok.experimental.FieldDefaults;
 
 import javax.validation.constraints.NotBlank;
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
+//@FieldDefaults(level = AccessLevel.PRIVATE)
 public class PersonDto {
     @NotBlank(message = "Name cannot be empty")
     private

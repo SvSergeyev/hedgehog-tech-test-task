@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
-@FieldDefaults(level = AccessLevel.PRIVATE)
+//@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

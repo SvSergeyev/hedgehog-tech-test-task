@@ -17,10 +17,10 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/people")
-@FieldDefaults(
+/*@FieldDefaults(
         level = AccessLevel.PRIVATE,
         makeFinal = true
-)
+)*/
 public class PeopleController {
     private static final Logger LOGGER = LoggerFactory.getLogger(PeopleController.class);
     private final PersonService personService;

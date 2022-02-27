@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-@FieldDefaults(
+/*@FieldDefaults(
         level = AccessLevel.PRIVATE,
         makeFinal = true
-)
+)*/
 public class PersonService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
     private final PersonRepository repository;
