@@ -17,7 +17,7 @@ import java.util.UUID;
 @ToString
 public class Person {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
 
     String name;
