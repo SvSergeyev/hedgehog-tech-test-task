@@ -1,8 +1,5 @@
 package tech.sergeyev.hedgehogtechtesttask.persistence.model;
 
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

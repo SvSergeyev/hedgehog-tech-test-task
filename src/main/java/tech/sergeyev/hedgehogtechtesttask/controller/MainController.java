@@ -1,7 +1,5 @@
 package tech.sergeyev.hedgehogtechtesttask.controller;
 
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

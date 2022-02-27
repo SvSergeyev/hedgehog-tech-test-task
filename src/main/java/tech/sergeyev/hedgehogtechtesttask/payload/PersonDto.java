@@ -1,8 +1,5 @@
 package tech.sergeyev.hedgehogtechtesttask.payload;
 
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
-
 import javax.validation.constraints.NotBlank;
 
 //@FieldDefaults(level = AccessLevel.PRIVATE)
