@@ -19,8 +19,8 @@ import java.util.List;
         makeFinal = true
 )
 public class MainController {
-    static Logger LOGGER = LoggerFactory.getLogger(MainController.class);
-    PersonService personService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
+    private final PersonService personService;
 
     public MainController(PersonService personService) {
         this.personService = personService;

@@ -21,9 +21,9 @@ import java.util.UUID;
         makeFinal = true
 )
 public class PersonService {
-    static Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
-    PersonRepository repository;
-    ObjectMapper mapper;
+    private static final Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
+    private final PersonRepository repository;
+    private final ObjectMapper mapper;
 
     public PersonService(PersonRepository repository,
                          ObjectMapper mapper) {

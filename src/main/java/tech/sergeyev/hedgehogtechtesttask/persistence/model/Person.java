@@ -1,6 +1,6 @@
 package tech.sergeyev.hedgehogtechtesttask.persistence.model;
 
-import lombok.*;
+import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Entity;
@@ -10,17 +10,39 @@ import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Getter
-@ToString
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private
     UUID id;
 
-    String name;
+    private String name;
 
-    String surname;
+    private String surname;
+
+    public Person(UUID id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Person() {
+    }
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSurname() {
+        return this.surname;
+    }
+
+    public String toString() {
+        return "Person(id=" + this.getId() + ", name=" + this.getName() + ", surname=" + this.getSurname() + ")";
+    }
 }

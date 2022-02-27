@@ -22,8 +22,8 @@ import java.util.UUID;
         makeFinal = true
 )
 public class PeopleController {
-    static Logger LOGGER = LoggerFactory.getLogger(PeopleController.class);
-    PersonService personService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(PeopleController.class);
+    private final PersonService personService;
 
     public PeopleController(PersonService personService) {
         this.personService = personService;
