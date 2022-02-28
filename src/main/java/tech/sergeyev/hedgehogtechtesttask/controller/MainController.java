@@ -26,6 +26,7 @@ public class MainController {
 
     @GetMapping("/exists")
     public ResponseEntity<?> existsUserByName(@RequestParam(value = "name") String name) {
+        name = name.toLowerCase();
         LOGGER.info("Exists by part: {}, {}", name, personService.existsPersonByName(name));
         return personService.existsPersonByName(name)
                 ? ResponseEntity.ok("User with part " + name + " exists")

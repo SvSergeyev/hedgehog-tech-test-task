@@ -30,8 +30,8 @@ public class PeopleController {
     @PostMapping()
     public ResponseEntity<?> add(@RequestBody @Valid PersonDto personDto) {
         LOGGER.info("Received a POST request to add user with data: {}", personDto);
-        String name = personDto.getName();
-        if (personService.existsPersonByName(name.toLowerCase())) {
+        String name = personDto.getName().toLowerCase();
+        if (personService.existsPersonByName(name)) {
             LOGGER.info("User with name={} already exists", name);
             return new ResponseEntity<>(
                     "User with name " + name + " already exist",

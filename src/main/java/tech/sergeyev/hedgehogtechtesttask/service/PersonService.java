@@ -43,7 +43,6 @@ public class PersonService {
     }
 
     public Boolean existsPersonByName(String name) {
-        name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         return repository.existsPersonByName(name);
     }
 
