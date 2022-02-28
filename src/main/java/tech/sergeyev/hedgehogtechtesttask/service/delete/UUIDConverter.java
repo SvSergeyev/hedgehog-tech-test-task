@@ -1,4 +1,4 @@
-package tech.sergeyev.hedgehogtechtesttask.service;
+package tech.sergeyev.hedgehogtechtesttask.service.delete;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
