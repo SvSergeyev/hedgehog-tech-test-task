@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.sergeyev.hedgehogtechtesttask.persistence.model.Person;
 import tech.sergeyev.hedgehogtechtesttask.service.PersonService;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -40,4 +42,22 @@ public class MainController {
         List<Person> people = personService.findAllByNameFragment(part.toLowerCase());
         return ResponseEntity.ok(people);
     }
+
+    @GetMapping("/docs")
+    public ResponseEntity<Void> viewDocs() {
+        return ResponseEntity
+                .status(HttpStatus.FOUND)
+                .location(URI.create("https://documenter.getpostman.com/view/16427287/UVkqtFbq"))
+                .build();
+    }
 }
+
+
+
+
+
+
+
+
+
+
