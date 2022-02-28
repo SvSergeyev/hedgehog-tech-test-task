@@ -1,5 +1,7 @@
 package tech.sergeyev.hedgehogtechtesttask.controller;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -12,13 +14,13 @@ import tech.sergeyev.hedgehogtechtesttask.service.PersonService;
 import java.util.List;
 
 @RestController
-/*@FieldDefaults(
+@FieldDefaults(
         level = AccessLevel.PRIVATE,
         makeFinal = true
-)*/
+)
 public class MainController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MainController.class);
-    private final PersonService personService;
+    static Logger LOGGER = LoggerFactory.getLogger(MainController.class);
+    PersonService personService;
 
     public MainController(PersonService personService) {
         this.personService = personService;
