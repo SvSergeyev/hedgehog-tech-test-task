@@ -2,6 +2,8 @@ package tech.sergeyev.hedgehogtechtesttask.service;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,14 +16,14 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-/*@FieldDefaults(
+@FieldDefaults(
         level = AccessLevel.PRIVATE,
         makeFinal = true
-)*/
+)
 public class PersonService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
-    private final PersonRepository repository;
-    private final ObjectMapper mapper;
+    static Logger LOGGER = LoggerFactory.getLogger(PersonService.class);
+    PersonRepository repository;
+    ObjectMapper mapper;
 
     public PersonService(PersonRepository repository,
                          ObjectMapper mapper) {
